@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link CSS-->
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Messi Assignment</title>
+    <!--Link Fontawesome-->
+    <script src="https://kit.fontawesome.com/075f3880d1.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- Header section + input and icons-->
+    <section>
+        <header>
+            <div class="logo-section">
+                <li><img class="logo" src="/google.png" alt=""></li>
+            </div>
+            <ul>
+                <div class="form-section">
+                    <li><input type="text" name="text" id="text" placeholder="Messi"></li>
+                    <div class="form-icons">
+                        <svg style="width: 25px;" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285f4" d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"></path><path fill="#34a853" d="m11 18.08h2v3.92h-2z"></path><path fill="#fbbc05" d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z"></path><path fill="#ea4335" d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"></path></svg>
+
+                        <img style="width: 25px;" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IlN0YW5kYXJkX3Byb2R1Y3RfaWNvbiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIKCSB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE5MnB4IiBoZWlnaHQ9IjE5MnB4IiB2aWV3Qm94PSIwIDAgMTkyIDE5MiIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTkyIDE5MiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxyZWN0IGlkPSJib3VuZGluZ19ib3hfMV8iIGZpbGw9Im5vbmUiIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIi8+CjxnIGlkPSJhcnRfbGF5ZXIiPgoJPGNpcmNsZSBpZD0iRG90IiBmaWxsPSIjNDI4NUY0IiBjeD0iOTYiIGN5PSIxMDQuMTUiIHI9IjI4Ii8+Cgk8cGF0aCBpZD0iUmVkIiBmaWxsPSIjRUE0MzM1IiBkPSJNMTYwLDcydjQwLjE1VjEzNmMwLDEuNjktMC4zNCwzLjI5LTAuODIsNC44MnYwdjBjLTEuNTcsNC45Mi01LjQzLDguNzgtMTAuMzUsMTAuMzVoMHYwCgkJYy0xLjUzLDAuNDktMy4xMywwLjgyLTQuODIsMC44Mkg2NmwxNiwxNmg1MGgxMmM0LjQyLDAsOC42My0wLjksMTIuNDYtMi41MWMzLjgzLTEuNjIsNy4yOC0zLjk2LDEwLjE3LTYuODYKCQljMS40NS0xLjQ1LDIuNzYtMy4wMywzLjkxLTQuNzRjMi4zLTMuNCwzLjk2LTcuMjgsNC44MS0xMS40NGMwLjQzLTIuMDgsMC42NS00LjI0LDAuNjUtNi40NXYtMTJWOTYuMTVWODRsLTYtMTlsLTEwLjgyLDIuMTgKCQlDMTU5LjY2LDY4LjcxLDE2MCw3MC4zMSwxNjAsNzJ6Ii8+Cgk8cGF0aCBpZD0iQmx1ZSIgZmlsbD0iIzQyODVGNCIgZD0iTTMyLDcyYzAtMS42OSwwLjM0LTMuMjksMC44Mi00LjgyYzEuNTctNC45Miw1LjQzLTguNzgsMTAuMzUtMTAuMzVDNDQuNzEsNTYuMzQsNDYuMzEsNTYsNDgsNTYKCQloOTZjMS42OSwwLDMuMjksMC4zNCw0LjgyLDAuODJjMCwwLDAsMCwwLDBMMTQ5LDQ1bC0xNy01bC0xNi0xNmgtMTMuNDRIOTZoLTYuNTZINzZMNjAsNDBINDhjLTE3LjY3LDAtMzIsMTQuMzMtMzIsMzJ2MTJ2MjBsMTYsMTYKCQlWNzJ6Ii8+Cgk8cGF0aCBpZD0iR3JlZW4iIGZpbGw9IiMzNEE4NTMiIGQ9Ik0xNDQsNDBoLTEybDE2LjgzLDE2LjgzYzEuMjMsMC4zOSwyLjM5LDAuOTMsMy40NywxLjU5YzIuMTYsMS4zMiwzLjk3LDMuMTMsNS4yOSw1LjI5CgkJYzAuNjYsMS4wOCwxLjIsMi4yNCwxLjU5LDMuNDd2MEwxNzYsODRWNzJDMTc2LDU0LjMzLDE2MS42Nyw0MCwxNDQsNDB6Ii8+Cgk8cGF0aCBpZD0iWWVsbG93IiBmaWxsPSIjRkJCQzA0IiBkPSJNNDgsMTY4aDM5Ljg5bC0xNi0xNkg0OGMtOC44MiwwLTE2LTcuMTgtMTYtMTZ2LTIzLjg5bC0xNi0xNlYxMzZDMTYsMTUzLjY3LDMwLjMzLDE2OCw0OCwxNjh6CgkJIi8+CjwvZz4KPC9zdmc+Cg==" alt="">
+                        
+                        <svg style="width: 25px;"  focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+                    </div>
+                </div>
+            </ul>
+            <div class="section-two">
+                <ul class="section-two-content">
+                    <li><svg style="width: 28px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.85 22.25h-3.7c-.74 0-1.36-.54-1.45-1.27l-.27-1.89c-.27-.14-.53-.29-.79-.46l-1.8.72c-.7.26-1.47-.03-1.81-.65L2.2 15.53c-.35-.66-.2-1.44.36-1.88l1.53-1.19c-.01-.15-.02-.3-.02-.46 0-.15.01-.31.02-.46l-1.52-1.19c-.59-.45-.74-1.26-.37-1.88l1.85-3.19c.34-.62 1.11-.9 1.79-.63l1.81.73c.26-.17.52-.32.78-.46l.27-1.91c.09-.7.71-1.25 1.44-1.25h3.7c.74 0 1.36.54 1.45 1.27l.27 1.89c.27.14.53.29.79.46l1.8-.72c.71-.26 1.48.03 1.82.65l1.84 3.18c.36.66.2 1.44-.36 1.88l-1.52 1.19c.01.15.02.3.02.46s-.01.31-.02.46l1.52 1.19c.56.45.72 1.23.37 1.86l-1.86 3.22c-.34.62-1.11.9-1.8.63l-1.8-.72c-.26.17-.52.32-.78.46l-.27 1.91c-.1.68-.72 1.22-1.46 1.22zm-3.23-2h2.76l.37-2.55.53-.22c.44-.18.88-.44 1.34-.78l.45-.34 2.38.96 1.38-2.4-2.03-1.58.07-.56c.03-.26.06-.51.06-.78s-.03-.53-.06-.78l-.07-.56 2.03-1.58-1.39-2.4-2.39.96-.45-.35c-.42-.32-.87-.58-1.33-.77l-.52-.22-.37-2.55h-2.76l-.37 2.55-.53.21c-.44.19-.88.44-1.34.79l-.45.33-2.38-.95-1.39 2.39 2.03 1.58-.07.56a7 7 0 0 0-.06.79c0 .26.02.53.06.78l.07.56-2.03 1.58 1.38 2.4 2.39-.96.45.35c.43.33.86.58 1.33.77l.53.22.38 2.55z"></path><circle cx="12" cy="12" r="3.5"></circle></svg></li>
+                    <li><svg style="width: 28px;" class="svg1" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path></svg></li>
+                    <li><a href="#"><img style="width: 40px; border-radius: 50%;" src="/20210704_170934~3.jpg" alt=""></a></li>
+                </ul>
+            </div>
+        </header>
+    </section>
+<!--End of header section-->
+
+<!--Subheader section-->
+    <div class="sub-header">
+        <div class="sub-header-content">
+            <ul>
+                <li><svg style="width: 18px;" focusable="false" viewBox="0 0 24 24"><path fill="#34a853" d="M10 2v2a6 6 0 0 1 6 6h2a8 8 0 0 0-8-8"></path><path fill="#ea4335" d="M10 4V2a8 8 0 0 0-8 8h2c0-3.3 2.7-6 6-6"></path><path fill="#fbbc04" d="M4 10H2a8 8 0 0 0 8 8v-2c-3.3 0-6-2.69-6-6"></path><path fill="#4285f4" d="M22 20.59l-5.69-5.69A7.96 7.96 0 0 0 18 10h-2a6 6 0 0 1-6 6v2c1.85 0 3.52-.64 4.88-1.68l5.69 5.69L22 20.59"></path></svg><p class="bluetext">All</p></li>
+
+                <li><svg style="width: 18px;" focusable="false" viewBox="0 0 24 24"><path d="M12 11h6v2h-6v-2zm-6 6h12v-2H6v2zm0-4h4V7H6v6zm16-7.22v12.44c0 1.54-1.34 2.78-3 2.78H5c-1.64 0-3-1.25-3-2.78V5.78C2 4.26 3.36 3 5 3h14c1.64 0 3 1.25 3 2.78zM19.99 12V5.78c0-.42-.46-.78-1-.78H5c-.54 0-1 .36-1 .78v12.44c0 .42.46.78 1 .78h14c.54 0 1-.36 1-.78V12zM12 9h6V7h-6v2"></path></svg>News</li>
+
+                <li><svg style="width: 18px;" focusable="false" viewBox="0 0 24 24"><path d="M14 13l4 5H6l4-4 1.79 1.78L14 13zm-6.01-2.99A2 2 0 0 0 8 6a2 2 0 0 0-.01 4.01zM22 5v14a3 3 0 0 1-3 2.99H5c-1.64 0-3-1.36-3-3V5c0-1.64 1.36-3 3-3h14c1.65 0 3 1.36 3 3zm-2.01 0a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h7v-.01h7a1 1 0 0 0 1-1V5"></path></svg>Images</li>
+
+                <li><svg style="width: 18px;" focusable="false" viewBox="0 0 24 24"><path d="M10 16.5l6-4.5-6-4.5v9zM5 20h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1zm14.5 2H5a3 3 0 0 1-3-3V4.4A2.4 2.4 0 0 1 4.4 2h15.2A2.4 2.4 0 0 1 22 4.4v15.1a2.5 2.5 0 0 1-2.5 2.5"></path></svg>Videos</li>
+
+                <li><svg style="width: 18px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>More</li>
+
+                <li>
+                    <div class="tool">
+                        <button><a href="#"></a>Tool</a></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="shorttickborder">
+        <hr class="shortborder">
+    </div>
+    <div class="border"></div>
+<!--End of Sub header section-->
+    <div class="first-section">
+        <div class="first-list">
+            <ul>
+                <li>Any time<i class="fa-sharp fa-solid fa-caret-down"></i></li>
+                <li>All results<i class="fa-sharp fa-solid fa-caret-down"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="Lionelmessi">
+        <p class="Linoelp">Lionel Messi</p>
+        
+        <div class="Lionelmessi-content">
+            <p class="messi1">Footballer <svg style="width: 18px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg></p>
+            <ul>
+                <li>
+                    <button>Overview</button>
+                </li>
+                <li>
+                    <button>News</button>
+                </li>
+                <li>
+                    <button>Stats</button>
+                </li>
+                <li>
+                    <button>Videos</button>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="messipicture">
+                <img style="width: 300px; height: 250px; object-fit: cover;" class="messi" src="http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQTBIkxproxJHBsj2ZOkeFr3CYyVJjrfW8qcovw9whTrkRjsqYnBRlprpmyAknfOsug43oiT9iqS9cJe6s" alt="">
+                <img style="width: 210px;" class="image-gird-row-2 image-gird-col-2" src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt80878813813ba1ef/638bc2a7bcd8461c0bfea6cd/Lionel_Messi_react_Argentina_Australia_World_Cup.png" alt="">
+                <img style="width: 210px; height: 130px; object-fit: cover;" class="image-gird" src="/Screenshot 2022-12-19 112516.png" alt="">
+            </div>     
+            
+            <div class="style-2">
+                <img class="image-style-2" src="https://a57.foxsports.com/static-media.fox.com/ms/stg1/vm/sports/play-618bb94d6000983/1280/720/27225697567--snap_1671377276716.jpeg?ve=1&tl=1" alt="">
+                <div class="style-2-icon">
+                    <img id="dimg_7" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC6UlEQVR4AezUA4xkWRiA0a5qjm3b9trecG3btm3btm3bNodtc6bunmzeZG86tZ1MnEx/ySnjf7o57bW32pdiR4YRaF2a93iTlRUwjKHksZTfqKEj29KHQIYX+J4UmzGJDCk+JOcNQhuuiIZdg/tYSAONlPIaO9CRCwiR+ylkEr8REn+ygJzXCW24gxQ7s4iQDfWczwS+ICRq2YkbCIkMp6BoADLUU5No4G42ZDEhkeEhzqeckGjmCPakiZBYSDUh8REDsw1Qz77MYR7zmckThEgp08jjGULkl+zfARrYKT7J4gL1VFPLUnK0BnEtNLKceuJGMp2LKaV1z/IkWQfowLW8yzvczky6E5fi/0oxhfd4gLhKrqIO2YXEpejGyrpRlHVPtV0haQqJy6cH0XXedimW0MCq9Cfrsy1xnTiKPmTdA03czyJyWcyn/MRMosGANHGVfM9RdKd1a7Ebl2a7CqqYS+sOpYWQaOQINuQHQuQuDqeZkPiWckLiVyatygBduJUVhEQD1YTIe2zGV4REMetzFSFyIwVYitsYIKoHZ7OYAEAN9zORiwnAf7t6PD8REpVsn5csmykCtVSTrQpO5342YDwFLOR1PqQfQ3iLDMVcQ45+4Hx2IUOaNVJu1mA0qcTXlDOdXFKU8S59mRG9/gN/sgZdySfNZwyjN3XksZhlzItO/to8Nw+zmN/Io4muXMx7pJnKMWzBWnzDcKo5nltYyJ8s4G2qWJ+R/MprDGFytNd/y3MzgLfg3z5nAyo5lRw9wmhG8jDHsCdn0pU0b/EqA+jBgazP7RzJJzzNUt4k8HNeclyHM4v1WIsP6c3FBEr5hC1oJtBIiNaFLVmHaRxIHfUE6qnkGjZhGtMZmpcc72ZkiGQZpZRTWUw9tTSwNYXMpCURuIy3eYERZKuBX1jOYMbkJqtSd7rxB7exhEqeYgm1NLOQIgoo5XY+Ip+3+JYmVvApuWR4kxo2ZRTdqOAO2mvvn41wAABtyzqhyVAbSgAAAABJRU5ErkJggg==" class="YQ4gaf zr758c" height="12" width="12" alt="" data-atf="1" data-frt="0">
+                    <span>FOX Sports &nbsp;•&nbsp; Fox Sports</span>
+                </div>
+                    <p>Argentina's Lionel Messi scores goal vs. France in 23' | 2022 ...</p>
+                    <p style="width: 18pc; font-size: 12px;"> Watch Argentina's Lionel Messi scor...</p>
+                    <!-- <br> -->
+                    <p style="font-size: 11px; padding-top: 10px; color: #70757a;">1 hour ago</p>
+            </div> 
+        </div> 
+        
+        <div class="overall">
+            <div class="thirdsection">
+                <div class="age-section"> 
+                    <div class="age-section-content">
+                        <p>Age</span><br><br><br>
+                        <span>35years old</span>
+                        <span>(24 June 1997)</span> 
+                    </div>        
+                </div>
+        
+                <div class="height-section">
+                    <div class="height-section-content">
+                        <p>Height</p><br><br><br><br>
+                        <span>1.69m</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lastsection">
+                <div class="Profile-section">
+                    <div class="group-1">
+                        <img style="width: 20px; margin-bottom: 10px;" src="/Blue logo.png" alt="">
+                        <p style="font-size: 12px;">Transfermarkt</p>
+                        <div class="threedottedicon">
+                            <svg style="width: 20px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="group-2">
+                        <p> Lionel Messi - Player profile 22/23 |...</p>    
+                    </div>
+                    <div class="group-3">
+                        <img src="https://img.a.transfermarkt.technology/portrait/header/28003-1671435885.jpg?lm=1" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Top Stories section -->
+        <div class="top-stories">
+            <p class="top">Top Stories</p>
+            <p class="para">News about world cup, Lionnel Messi</p>
+            <!-- <hr style="width: 2px; height: 3px;" > -->
+        </div>
+
+        <div class="wrapper-1">
+            <div class="flex-1">
+                <div class="bodyflex-image">
+                    <img alt="" id="dimg_3" src="data:image/jpeg;base64,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" data-atf="5" data-frt="0">
+                </div>
+                
+                <img class="dimg_5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAQCAMAAACbZSdJAAAAbFBMVEX///+pIyOpIiKlBgakAAClCgqnGxurFBSmFBT++/vivLzdsbGpBAT79PSoAAD47++/Y2PRk5O8WlrZoKC5S0uuLy/HenrcrKzPjIzMhoa3UlLpy8vFdHTmxMTEb2/x3t7s09O1Q0P15+eyODjrG1njAAABjklEQVQokY2S23KEMAiGCRIkWjXRXU9b3V37/u9Y0B62F52RceCPyTcBAjRmsFu1y6rlBGesNgumwtsue490O0OiWlaaKkhlHt7F0XKGdGp8MdWyyjxsSOupbI10dAfYajSy0rRPgQcpE0DK3X7nI6VkroOhjctXrOAxzZf3wopKqYA0TweJDMB4kAPldVVQdkkkaLEjYejVsdCzgolobMmvRmp9tDxoF3koPb5VRYZX8RQXjexp7chxXYuTJ0yiW0SDkryK49izOv4lHWbDvbFYD9u9Ro5bM3pHt1FPX5d7o6R0s1L6PYf8hfSDFXXEG7naxuUDJSXZG2odklR6K9EPg38h96OatcUys04ArCx90mzhm6xIu6NHuhcSCY47c32khbDW54ILy5iE529y3IdA13/JcNxpZENoD1dm2srxD1loY3UE/yWh907QZdp9+CGZsxGCZ9Z0OuIslMT2nnyQ9kdjmIkR2fMGk5eDjLHtdIBiHDWbNrZhUVfd1NmuLY5hLOIV505118befnwCG88YZNI/vCkAAAAASUVORK5CYII=" alt="">
+                
+                <p class="PSG"><a href="">PSG make decision on Kylian Mbappe snubbing Lionel Messi World Cup...</a></p>
+
+                <p class="hour">17 hours ago</p>
+            </div>
+
+            <div class="flex-2">
+                <div class="content-flex-2">
+                    <div>
+                        <img class="logo1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAQCAMAAACx1dbmAAAAbFBMVEX////KAADMAADJAADLAADsvLzIAADruLjqs7P99vb33NzNBgbjmJj35eXwycn88fHRMjLfenrii4vYWFjXT0/OFRX11dXnoaHjkZHqra3ZYmL44eHfgIDccXH0z8/hhYXTPj7OHBzRKirVRkbbXNbSAAABdElEQVQokZWS6ZarIBCEewMkEU3URMctmcn7v+MtJJn7ezhHm+UDquki+mtLwYVE1DgXiJbgnCO65xDuWM0xvmM6+MqzX4lY2RNNHpHo6plZfU0PdPQSKebluvAqIhTwBz+biLZ0ZTETG05ehEU7Sli2regBrntvx/hiN9GGdrbtYdafVM7OeKIGHXuWBM7Y+sImxn1mV+EvapnrigsfmTsaWTaWX16s8Mmz++bHhx8KDz0r3xz79peXwjeqqecevM2byekO2Qfz5D6p7m/eNjvPBn7EG024t0WSQP/zAk0KoYVnp/Oa+dWOi2LW8/XRg3wjH/OPN6/pJ1wz/7Lv+WW6xMJ/8p0WtWE+25DxFs/Z1O1stsab9VQxjwvbCv61g99x0Mjs6Gm3WOqFjQsqo3g1n57Q1KFeyEOnPCtaYzgkL1oVP2jmmf0Ia6QLMu28cofBXvxAXhU8+6r4zTUUs8OWbC4Yz53C8YX27beMxPBx3F/aP2MEEsVX5JQoAAAAAElFTkSuQmCC" class="YQ4gaf zr758c wA1Bge" height="16" width="47" alt="MARCA" data-atf="5" data-frt="0">
+
+                        <p class="link"><a href="">Galtier confident on Messi stay: He's happy at PSG</a></p>
+                        <small>15 Hour ago</small>
+                    </div>    
+
+                <div class="flex-2image">
+                    <img alt="" class="f2image" src="data:image/jpeg;base64,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" data-atf="5" data-frt="0">
+                    </div>
+                </div>
+                    
+                <div class="content-flex-3">
+                    <div>
+                        <img class="logo2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAAQCAMAAACm24RqAAAAYFBMVEUAAAD///96enq0tLQfHx/q6urBwcHGxsZ/f38iIiImJiY6Ojpra2t2dnbn5+ewsLD39/fV1dWJiYkuLi4VFRXOzs41NTVDQ0NOTk6dnZ2mpqYICAiWlpZTU1Pg4OBcXFwKNDBTAAAArElEQVRIie3UtxKDMBRE0V2RBAgFTDAm6P//0iDX0FCgwrfZ4jVnNAzAv9uVUlwkn+YBkpeVT/sgqE1ykrFMn/btwPz8qKMG0iGLG9hHBKw2skVLZi/U7GD6cIwH6HIMw8g3jEbCCZ8iHOMBspppFwekBIWND2jbnaYINFbSUk2/DzMGoAzAlZt1KLjRs8GSTdTHG9oIftS19GHFMaPooPZVg/frsXJ+0vbvfl8NdgbSSBMRcgAAAABJRU5ErkJggg==" class="YQ4gaf zr758c wA1Bge" height="16" width="160" alt="Goal.com" data-atf="4" data-frt="0">
+
+                        <p class="linko">
+                            <a href="">Messi contract extension talks at PSG underway as Galtier insists World Cup...</a>
+                        </p>
+                    </div>
+                <div>
+                    <img class="image2" alt="" id="dimg_31" src="data:image/jpeg;base64,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" data-atf="4" data-frt="0">
+                </div>
+
+            </div>
+        </div>
+            
+            <!-- <hr style="width: 200px;"> -->
+
+            <div class="about">
+                <div class="about-content">
+                    <h3 class="abouth">About</h3>
+                    <p class="about-content-paragraph"> Lionel Andrés Messi, also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. <a href="">Wikipedia.</a></p>
+
+                    <p class="about-content-paragraph1"><b>Born:</b> 24 June 1987 (age 35 years), <a href="">Rosario, Argentina</a></p>
+
+                    <p class="about-content-paragraph2"><b>Spouse:</b> <a href="">Antonela Roccuzzo</a> (m. 2017)</p>
+
+                    <p class="about-content-paragraph3"><b>Height:</b><a href=""></a>1.69 m</p>
+
+                    <p class="about-content-paragraph4"><b>Current teams:</b> <a href="">Paris Saint-Germain F.C.</a>(#30 / Forward), <a href="">Argentina national football team</a>(#10 / Forward)</p>
+
+                    <p class="about-content-paragraph4"><b>Shoe size:</b> 10</p>
+
+                    <p class="about-content-paragraph4"><b>Salary:</b>  41 million USD (2022)</p>
+
+                    <p class="about-content-paragraph4"><b>Children:</b> <a href="">Thiago Messi Roccuzzo, Mateo Messi Roccuzzo, Ciro Messi Roccuzzo</a></p>
+                    
+                    <button style="line-height: 16px; margin-top: 20px; color: #4d5156; display: inline-block; font-size: 14px; line-height: 1.58; padding: 8px 16px 8px 26px; border-radius: 20px; border: 1px solid #70757a;"><svg style="width: 18px; fill:  #4285f4; " focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg> Claim this knowledge panel</button>
+                    
+                    <p class="feedback" style="font-size: 12px;">Feedback</p>
+                    
+                    <!-- <p class="feedback">Feedback</p> -->
+
+                    <h4>
+                        Profiles
+                    </h4>
+
+                    <div class="social-media-icon">
+                        <img class="Instagram" src="data:image/png;base64,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" style="border-radius:4px 4px 4px 4px" class="YQ4gaf zr758c wA1Bge" height="32" width="32" alt="" data-atf="4" data-frt="0">    
+
+                        <img class="YouTube" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAADm0lEQVR4AaWWhW5sxxJFVx3Pk/Exh5k5HxAGQZg54jCDKN8SQZhBFLEUZmZm5ph0PbViuVQi3/BS6/Tu6tq7h+fEJ7tsSgQSoUKAAUQIoUaEEiECEAghRKC2wSCsshoASMRQDlCB0CCspQIIgCJI6NqIrpQZkESiXO2DoZrKSe0kgqIKZkmUrtnpBCVorwplJ9ShLFVOLdH+KNFLKGENlSzdQjCoUypr6A3TBIQEa2B5AO0tpM/rrRa9pI0mg7VhQKjYl5pBScsFipHQAaR9htYSe1OAwTUSUxJStD2VVNoikrKjpkhZTKLfsqiQih0JQFlIiPIGCGHVoScRCJFeYhCB2o19BWOkNBXJaIedpk47e7TN9jE7GzOrYwZYFUxM0DAeuzAPuLCwKpyfX3nrjaXrr1157RWKAuOd7f9v9JeMGLbc+h833x1T0/x2XFr8+qQjV957J8QwQGNIwzT7zZw+8RQmp/xdrBqnTjzNNNEkRR3E/ryjjHbbiz/AaPe9BO0BI1VojH/9W+X3smZHCECkv2ipikbMzfETfHPN1SvvvcvPsvq5SFSyM4c0SiWqTE37E8zfc8dnRx329TVXb3jvHX+CmJ7JJLEy1cFWJglMTPhTJDkez999x6dHHf712rNxPcOgmGgdw5CQmpBgyk8jmqi5Ybzh/ffGX33JxugHg4YwMiFAQCEXF2Nqio2RBvqnbbf/60WXTe1/IKBSNC4vpRWoQjBKBaKqkIsLw+QkG2P493/+cu6Fs0cdUy8j61l7fClFiDgSqHYDGH/77fC3v7Mx/nfvff3kfpLxN98IaOfHoKZopKorH37w01/USX+JlY8+VJSsWOzvASIpiw8+yB9g4cEHkopGyKQ/pslYlW9vvmHpuWf9XSy/8Px3N92QomgdQzyxyX8AEQjAYGKY2nff1U/LxF//GpOTMTU98Zc/AzE7F8MAAOMfviczf/jB5eXVkd99u+HddxcffsjxOOh3IAKMx/7/b1hTINAEVBtNN/wkAa7rHBRVSWiNkpKUpisI0pUaIG2B7ixQhmpLMEuE2kH0d9L1zqyeNDOEFBOprZAQrGeQBpJGGp3YoYAIokhP/albd1Oj3VYwpFAyrBlJlBD7Qxwl7FCtYXYW2vE1l8UByHYW1WVqIiS1R5mRqosKXe9BJgmpgjIoBHanYkQ/ZehamTsLJNvYh1UrFAIYDGjvhUk1SV0QNATtY+hdtFX19BW1BPojd0p5ENc3bJAAAAAASUVORK5CYII=" style="border-radius:4px 4px 4px 4px" class="YQ4gaf zr758c wA1Bge" height="32" width="32" alt="" data-atf="4" data-frt="0">
+                        
+                        <img class="Facebook" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAA1UlEQVR4AWOwDp9LUzTELRi1wDdtaf+8w9sPXDtx7h4Q7Tt2c92OS9SxwCZibtesg0+fv3756i0aoo4FkxcdgxhHEwtiite8ePmGhhas3HIB2cRL1x5t3HV5xebzEEQFC67efAI3/cDxW7aR86icip6/QIRP9+xD1E+myOHTPv3AqAVA1DJ1/76jN+EI2YKLVx8hS+0+cgMY5yRbMHfVKbBxhNGFqw+B6mloweY9V2hrAbAIIceCugl7gE6DI2QTT124jyyVXrNxEKaiUQtGLRi1YNQCAMs01I34bbYCAAAAAElFTkSuQmCC" style="border-radius:4px 4px 4px 4px" class="YQ4gaf zr758c wA1Bge" height="32" width="32" alt="" data-atf="4" data-frt="0">
+                    </div>
+                    <span class="Insta">Instagram</span>
+                    <span class="You">YouTube</span>
+                    <span class="Face">Facebook</span>
+
+                </div>
+            </div>
+        </div>
+
+    <div class="wrapper2">
+        <div class="flex2">
+            <div>
+                <img id="dimg_19" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAQCAMAAACBWcfHAAAAw1BMVEX///8AAADu7u7X19fh4eHp6end3d1zc3P19fX6+vpsbGzNzc0bGxtgYGBMTEzQ0NB7e3u2travr6+enp4hISEICAhVVVXFxcU+Pj4qKipXWFz46efCAADGKBBlZWWWnZ0pMDDFSkxjAACMjIzpAAqbAAA1NTWmpqaVlZZmVVTsraghAADUa2JQWVpXSUjcdGvMPCuoIw22MR/XeXDZhn+jRj2gLR/21tPuycbfmZPdkIrpurbIMx/MRjfFHgDNUEPQXlMGtW57AAABoklEQVQokX1S2XabMBCd0QYKxICwMY4CXWiDStOGFreGEjf9/6+qBDjLOXHuyyzcyywaAIK7AMp370OLdbheh5tLAIYE3gTBGqH88JECZCkkK5AYQFa9LbIqmSvv02er8oxTQX0jUL5OZkHEtpF0Kl8gGizjGCmo3H5DTM+UiBIlAxVZVc1IVItEqToihNgM8C2ZaxHuQMDnJyegVDAOCicIb7axI2/TWiWB3cdqTlbb2eZyth6EFWeMCfAumRBCoQ8EHofKLmyS1cipqHaC8nTjyLZWlnsW6aNKGv40RlbJKKKp2026s3GCjhwTIN6FBSbx0gw3z4bPvjRfbdKlJhUYR75Zge8AuzQufbsLAnRSyZMKIA8ZnFTSkWW9gaUGL8vl+a4k6Fs9B9++37U/EH92GszGxmImG+DUwQfGlq5iA91+8X/9LhrNqbsuIlytiXxivriVq/pw3U9uUxSuqB6b4c/QjPrM0zswYlR/f9dLv7suiuOwP/61eOiGcTycV/nC/nx8GLSUWvfNvm275nDmLF9CjsNte98e/3VN/1pf/wHVPyDCluukrwAAAABJRU5ErkJggg==" class="YQ4gaf zr758c wA1Bge" height="16" width="53" alt="NDTV Sports" data-atf="4" data-frt="0">
+            </div>
+            <div class="flex2content">
+                <p>
+                    <a class="flex2contenta" href="">Watch: Lionel Messi's First Goal On PSG Return After World Cup Triumph With...</a> 
+                </p>
+                <img alt="" style="border-radius: 10px;" src="data:image/jpeg;base64,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" data-atf="4" data-frt="0">
+            </div>
+            <div class="flex2contentp">
+                <p class="flex2contentp1">
+                    3 hours ago
+                </p>
+    
+                <p class="flex2contentp2">
+                    Also in the news
+                </p>    
+            </div>
+            
+        </div>
+
+        <div class="flexwrap3">
+            <div class="flex3">
+                <img id="dimg_27" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIABAALQMBEQACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAEBQYD/8QAJxAAAQQBAwIGAwAAAAAAAAAAAQIDBAURABIhEzEGFDJBUmEi0fD/xAAZAQADAQEBAAAAAAAAAAAAAAABAgMEBQb/xAAqEQABAwIDBwQDAAAAAAAAAAABAgMRAAQSITETFEFRgZGhMmFx0bHw8f/aAAwDAQACEQMRAD8AvR7V2PBMtiPCdccaeLjTbLoLG0KKVKO4gjgccd9ctTDS0yUg98vNerXbpU7s1KUBIgkjOYkARP5rV3K0QqGNOZYb6rrjCVBW4jC1JB9/vTrsLYJBCB5+649tideUhSjACj2BNc/D1vHmMssz4/lZTwUWFbjskYyPxPy45T31NuwsyoKLYCuGvDrT3dqttRLasSRrzHz7e+lTvDEuwu4UZqItpLseO35qXICnFLWpPAAyPbGSdHc2bjNaQTlJz+603zbVq4oqBgkwkZAAH4Pammeusu0wbtTK2jGLodjMOEqO7AyATjjP9xoiytkKwlA81m3dL7G1ZkGYzI5dKX4elx7C0tgw2Og0poNq2rQpWU87gr7z7DWq3bbSSECBWa8ttg22TqqZzBGvCKfDpWIvh81L7hdYLa21rxglKif3qwQAjDSOXalXO8AQZB7VKRVqlMxYsu6VIhRlpUlsR9qllHYKV9HHbGl2ZMAnKrb6hJUptuFKkTJMTrA/tLj19aigbq5yxIZSThWxQOc5BGOQRnuNENjDhNSVeObwX0ZE/vWixqVqr2mps3IzyGw07vZ3odA9JUPkAcZGgGsPpNWcv9tIeRIkkZwROsHl7Gl1UHFx59+zVLk9BTJHR2ADdnjHbGilEKxE1F26StrZIRAmdZ4RT4daItlYTQ6VGYWyUEenanGmSmCTzqbr5cbQ3HpnyZr/2Q==" class="YQ4gaf zr758c wA1Bge" height="16" width="44" alt="Punch Newspaper" data-atf="4" data-frt="0">
+                
+                <!-- <p>
+                    1 hour ago
+                </p> -->
+            </div>
+            <div class="flex3content" style="display: flex;">
+                <p class="flex3contentp">
+                    <a class="flex3contenta" href="">Messi guides PSG to victory after W'Cup return</a>
+                </p>
+                <img alt="" style="border-radius: 10px; display: flex;" src="data:image/jpeg;base64,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" data-atf="5" data-frt="0">
+            </div>
+            <p class="flex3contentp">
+                10 min ago
+            </p>
+        </div>
+    </div>
+
+    <div class="wrapper3">
+        <div class="flex4">
+            <div>
+                <img id="dimg_13" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAQCAMAAAC1IAbbAAAA1VBMVEX////XAADYAA/VAADojCH//zT98THYAADYAA7pkpX2zM7vpqvojI7plJjeNADXAAr87O342NrxsbT++fryu7364uPjTFTtmp/yt5rbGwD2yLjfQgDcJwDfPADwo4bjUyvlXzfndXrpgIblYmneNkb0wsXsnlDma3LhNkLzvcb//17lWmLiQ03+91zcGzz308X1xK353NTqgFPjUQDyrpXwqIP75t7kXBXnczLockPtlnXkWSbriGXqgEniUhLhTx3dOBTkXwDmaCLoeBLlZS7ulGn0u6vhGPhAAAAB50lEQVQokWWS27qaMBCFM7FtQkASQOQQwMMu3ba15eCpIqLbsn3/R+pQ2yv/izBrmExW5gtxXVeRB76/WPwN8uXLUnwG+gQJhOEIh3i58paWaQiMnMCf+vmXD88Q03q1xMS1RPDqLQ0lTFQrf+p8/fbxGWJOvrvLyYu/UlMxNsfuwlk766H6x6dniBkQS/gLcyKCfDEW/tLM1cpf+/nP0TPEcokyTSJMl7hmEASeGNbAcAJjbFjWsBjj/9EwgjgcKIgqw/ihCsyiqgaliAofUTwUexqQqMpsBqz2NoPYkrtmEMVEw45sIdpXB/yZDa0jmqb2r4bRNIFjnNCU800cyYRCU0SyIyc4Kj1KKD9hdQv2vXIcjSXV2XsHO+745SQvO8bCBmiEZ5YNJLsUWvSn+bXTb7nmXO+It5H9PZG3K2uwS6E5pb9p6mvZbxkrCSkZRadHEqYjyrKC0S6CQz2iXTI6xux6pRRqzF5snuITOYLOsqx4V+osoW1BAuv3HZecsrKGvsdv0TIpKRuM2Lxr2zaO0nouo62Wp6YkBZPnG9dVCruQUT0YOUuGEwwZ5wBtgz0hykq82b+L29DeIan2NjQxZnvoPDQyQ7qCbOfzpkJ1QHPqMKu3l0t8nM1xp67qWX+/XXDafwAocTyjtHuNswAAAABJRU5ErkJggg==" class="YQ4gaf zr758c wA1Bge" height="16" width="45" alt="Football Espana" data-atf="4" data-frt="0">
+            </div>
+
+            <div class="wrappercontent" style="display: flex;">
+                <p>
+                    <a class="wrappercontenta" href="">Catalan police find evidence that Barcelona directors leaked Lionel Messi contract</a>
+                </p>
+                <img alt="" id="dimg_7" style="border-radius: 10px;" src="data:image/jpeg;base64,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" data-atf="4" data-frt="0">
+            </div>
+            <p class="wrappercontentp">
+                10 mins ago
+            </p>
+        </div>
+
+        <div class="flex24">
+            <div>
+                <img id="dimg_23" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIABAAMgMBEQACEQEDEQH/xAAZAAACAwEAAAAAAAAAAAAAAAACBAMFBgH/xAAqEAACAQMDAwQABwAAAAAAAAABAgMEBREAEjEGIUETUWFxFDIzUoGRof/EABoBAAIDAQEAAAAAAAAAAAAAAAIDAAEFBgT/xAApEQABBAEDAQcFAAAAAAAAAAABAAIDESEEBTESExQiQVFxoWGBkbHx/9oADAMBAAIRAxEAPwBe29O1FzpYaiKogQ1FS1NCkm7LOF3dyB2GNZLYS4WCu5n3BsLywtJoAn24Si2a4tHHJ+EcJIkrqSyjKxfqHnx/vjOh7J/onHWwC/FxXzwuyWW4xyVMb0xD0rok671Ppl/y578H341OyfZFcKd9gprurBuvsjtFkqbpcFo42jjchiWdgQu0EnOMnxjUZEXupDqNbHBH1nKln6buKfh2p0WohqYUlhkRtu8OrMFAbB3YVjj4+RojA8cZS2blAb6sEGj5/ryS8VkuM06U8cAMzruEZlRWxt3cE/tIP1/Oh7J90mHXQAdROPYqvOASMg48r3H9jnS16wbFq8tnUctspIKeOkjkemqmqopHc4DlNncDkAd+RpzJi0VXCz59vE7y8uqwAR9OVJF1VUJRvTNSxPlXUSbiGG6L02+89j9jRDUGqpKdtLC4ODj/AA2gqOpJJa641kdKIpLhAYZh6pZRnbggY8beD76EzGyQOUxu3ARsjLrDDYx745S1mvUtpuKVkMMblQ2VJI3EqVyT3Pk6pkpYbATdRomzx9BKO19Q1dvRQ2al0qBUxyTOSwkEbJk+4w3HwO+rZM5o9UOo2+OU48OKwPK7TEPVNTHLRSNAkppBIsfqPkhXTZtBxkKOQDn71feDjHCUdrYQ4B1XXwb/ACs+FAAHtpC1F//Z" class="YQ4gaf zr758c wA1Bge" height="16" width="50" alt="Daily Post Nigeria" data-atf="4" data-frt="0">
+            </div>
+            <div class="wrappercontent2" style="display: flex;">
+                <p>
+                    <a class="wrappercontent2a" href="">Messi to join Ronaldo’s Al-Nassr rival in Saudi Arabia after PSG – Al-Attiyah claims</a> 
+                </p>
+                <img alt="" id="dimg_21" style="border-radius: 10px;" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFwAXAMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAFBgQHAQIDAAj/xAA6EAABAwMDAgMGBAQFBQAAAAABAgMEAAURBhIhMVETQWEHFCKBkbEjQnGhMlLw8WJyosHCFSQmM5L/xAAaAQACAwEBAAAAAAAAAAAAAAADBAACBQEG/8QAIxEAAwACAQQCAwEAAAAAAAAAAAECAxESBCExQRMiBXGhUv/aAAwDAQACEQMRAD8AtsCvYrNZo4IxWFqShJUshKQMkk4AFb4pU9ps92BpV0MjmS4lgnsCDn7VGdQna29oEkSls2eTsioO3e2DlRx1J+2KUn9WXZK3HIt1uHiLHP4ijtScc8/1zRa3aTfERUtyOt2UpPiNh1BCB57s55PA68c9DWk6EI8T3pmBLQ47kOpKVBBPUgHBzQeYbg0etntAu9sS2wHlrQgAp8f494465569qtPRuqo+pYzmGjHlsYDzCiD1/Mnuk1Q85h0JMpYKQCB4Y4KRTV7I5Dzmswrdw605uzzxjOP2q00VqS8apTVrSnNRz1IcCdq/iJ8uKu3FUTq5mS9qO6+ByhK8r+lEBFjezIJGnBtVuT4isHvzTfilL2XIxpOOe5JpvxUO+TTFZAr1bCoQxilb2kxDJ0ySlJJZlMuYH+cD/lTA48v31DSf4cZNa3mP71aZjAGVKZVt/wAwGR+4FVrwy/HTWwRDuK0AISncpXYdMVxuMqQWikMIIJJPIx6mke/alvNoLpi25oMnIS8pRJPqMHiodzv19RYYkhbSHG5je4BWQQQeenlwKzfto1uUJs01Sv38JjthG/nJ8h6VD9mKzA1pESWzlSlMudkZGAf/AKwPnQ4Tp0h4PyAheTkBCcbaO6RZcXqyH4AAUuY24okeSRk/b96YxtoUyJV3LwNUpdUqc1Le0gnHPHyq7DVIXM/+WXf4SonPQ9OKcnyJPwWV7O2vB0lBHdGaZaD6Pb8LTcBB8mhRiuMiRpnmsg1HaBLqzk4qRXDpxTHWl4uqUMHyruQFAg9D1rZZ6Ctc1CK3S2V5d55s5fgqjtyHA8G2EOpyDn+E57YPJ9DQDVmqrYUsR2ku+LHK0FAQEk8YGAeNuRn1FMPtBt0ie84Yed6EAOFJwUp/m+lI96hIbaCfdbutYHwPKUktp/00i8Smns05yVUnZy4RZkVlEOO00oAFZQnG4/p5VLtN8a07cLfLdbQ4FuhpQUraUhZAKs+gJPypTYWIKVvKUdpPRZ5z3qI0v/q8tx6QfwWRlCTwFKyM59MUTFH2A5b2tez6cZeafZS7HdQ60tOULQoFKh3BHUVSU9QGtbghTgQHFFPPnwKYvZ1NuNjhKgS0uyYi3Mx29uHGQfL59dvUemcANIt6nPaQtmWwtO50LCVjBIIBBp1y4a2JPwW9a2gxbo7Q/KgCpVaoG1AHYVmqMhEjLyFZ65qQFDuKUbZqBmTKVFUoh3PFHtx/moFZ1L7oL8W/DCSjlQqJNucSBbpFwlrUiOzxv6bz/h/rvXMKcebUNhX4ig1wkkAHrnHyHzpR1fEl6lvjOnbatKYNuShcpxxfRR79zj/eiTXPwUUcOz9CTqe8Sr7cJkplTsaO6jwmmwog7PXpyftxUO8Xnw7VbQqc+mYGAiQgtlQUoDBVnI6/P9abNS2OHp+PHnRZBW4l/CGJYBSsJGd2Bg4yB/RFK90v8+dtYZTbGyvlPhRPiSB58qxj5Ue8c0lpEV0m+4l3SeZa8J3kA8qWefkPKo8eRIZASw6tA3hYCT+YdDR+xaZfud5VFkNvvHBUVMpyCc/mP5eue9G9S6agWNMJLDjYuByXEJWFJbRz8SuevTHfJz0oS4zXH2R8n3Yy+yXUy0vuN3wpUrnY8r+JI74HTPQ/I+dWPqbTgvT8WbDliFcIv/qf8IOApP5VJyMj58c0p6N08myRGXXWULujyQtLTh4joyMqUf5sHPNDbpq+RJdlLsUhxm3NAhy6HaXJah5N7uEoHTdjJ79x1fFutjE4qz0oldyxG3JcRKGroG1LI4kR0kNqPqDkpPpk/rXcPtkZCh9apaFKuL0oyzMvZV1TvuTvxKz/ACg9PSiDN11XC8RtuI5MbUsrSt4FKkg/lOE8471Wc8sPk/HZsa2+/wChwiafixpploKi4e5ovjisVkZzWdV1T2yi7C9eNbPabuLcZEVqSwpO50FRSpJ9DyOmPKljTGsoLUy5vXeC8773LLzZZIKknkEHJHHOPlXtQ2m5apvDLEOMC82pzxBgIASP4d37D6VyT7PNSsIG2Ag7fJL6M/etjpeHxrYv1UOMmv0RNT3g3i5vPIPhRWwUspUkfAnqSfLOc/t2oZaGG5E1qOk+EZDm3xXOVK9fU8cA48hxUifp+8Rz/wBzapoCeceCopJ8ug5ri1FSwXV3e3z0hJ2tr2lsDvwRjnjn0pmq0uwCJ29eBnjadvNoPi2dRd8RIX4a1gOqOOc4O3jJGQcVx0Ja0XjVL0+9us7YzgcWHHE/GsE7B1wRkFXbgd6EFcZph162XiVHAQpKmXEkFY7ZScHOPlketAFIS22lxRKlO5wCf4R/ag65bYWuUpS32LC9rV3RFWrT9ldU7Mun4k10KClJaJwGwR0Cj+w9ajW5i2ItohStyn4iWy0gZCSodD2xkcg0n6JLbz0uVsBecVwcD4E8YH6nn6Uxwlbpk+QQlQDyUpSRnhKR/aszLk++keh6DpZnp+ft9xoYVMeZ8WLGbjRQMF953ajJofd9Gamcl7mZACCkY2rz/uKcHZhlwPd2VwGYexKUlxxJUngbiQeM9Rgjzz+oe7XizImqS/qR1C8DKWipxI+YIpj4o19mZ66zqOT+OP4MI6Vq86llpbqlYShJUT2Ar1RbqcWyWcA/hK6/pWYmCidtIr+6zXLgXfG8PEtoxVKO7a2SQUrOMnhQSSB5dBRDSmlpbKYKWJcZRdHjEMvlKltbsFYBAOKgQFFq/RFJJyh5Lg58wMj7U7MPOsx30sOKaEZDCEbfNPgE4OevPNPYvtHc0OqXxZU4/wAhORcnXJKplrnn3RKEJDbg2odJVhSgXABgDGNquSfrJi3C9pZjImQY7zqwlL3uyiUheUhXPOByo8+Se5wIVqsdsnLnsyYiFCO6hhCgSPgCEqAwDgY3KHAAwSPM1mRbGY7ZcYcdbU266oKSoZJSd+ScZJJSATnkcUwjCpaeiFcmdLzlpau9iS07IcCCpCAknK9qSSkg/EenGcc4xS7rf2d2li3TZFrmS2ZTMd1xEZX4gcIQcAE8jPTOTTfpSdInRZ5lOF0NPNJQlZ3Y/DQonnnOST9sUQvLxXAeWtDaigfCSnOOld5NHZlNnzJpeYmPNS0rOx7g4OMjr9wKcjPbtcYMsNoVJeVuS2g8JG0ZJ+hpF1JHbtmo58eJlLceQfD/AMPmPpTXYIrcr3x98FS1uBokn8pwT9aTzzquR6L8Vmd43ifoLMtQmrezeL++7IfWndHh4AwScA/Y/pXJuFFktpek25tla+cOy1IURnqR/b9KLvobabemBtCnmmzs3DITjtQnT0Fm8wVTrgFOPuOqyc8AdhVJp+h7gvbP/9k=" data-atf="4" data-frt="0">
+            </div>
+            <p class="wrappercontent2p">
+                10 hours ago
+            </p>
+        </div>
+    </div>
+    <div class="moresection">
+        <hr class="line">
+        <button class="more">More news <svg style="width: 15px;"  focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></button>
+    </div>
+
+    <div class="wikipedia-section">
+        <div>
+            <div>
+                <p class="wikiorg">
+                    https://en.wikipedia.org › wiki › Lionel_Messi <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                </p>
+        
+                <h2>
+                    <a class="Lionel" href="">Lionel Messi - Wikipedia</a>
+                </h2>    
+            </div>
+        </div>
+       
+        <div class="wikipedia-content" style="display: flex;">
+            <p>15 hours ago — Lionel Andrés Messi also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and ... <br>
+
+            <a class="early" href="">Early life · Club career</a>       </p>
+            
+
+            <img alt="lionel messi from en.wikipedia.org" id="dimg_37" src="data:image/jpeg;base64,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" data-atf="4" data-frt="0">
+        </div>
+
+        <div class="wrapper-5">
+            <div class="wrapper5">
+                <p>
+                    https://www.forbes.com › profile › lionel-messi <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                </p>
+    
+                <h3>
+                    <a class="LMessi" href="">Lionel Messi - Forbes</a>
+                </h3>
+            </div>
+    
+            <div class="forbes-content" style="display: flex;">
+                    <p>
+                        3 hours ago — 1 Lionel Messi on the 2022 The World's Highest-Paid Athletes - Messi claimed the Ballon d'Or as the world's best soccer player for a record seventh time...
+                    </p>
+    
+                    <img style="border-radius: 10px;" alt="lionel messi from www.forbes.com" id="dimg_51" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUAjG5mpGybfmVTRYIuAs59_OYWO2enJjPgnXQKz37rCnTjI_nas89&amp;usqp=CAE&amp;s" data-atf="4" data-frt="0">
+            </div>
+    </div>
+    
+    <div class="Peaople-also-ask-section">
+
+        <h3>People also ask</h4>
+
+        <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+        
+        <div class="wrap">            
+            <details class="question1">
+                <summary class="questions">
+                    Is Lionel Messi faster than Ronaldo? 
+                
+                <i class="fa-solid fa-chevron-down"></i>
+               
+                </summary>
+                
+                <p class="paragraph">
+                    Is Lionel Messi faster than Ronaldo?
+                    Messi and Ronaldo are both phenomenal footballers, and it is hard to choose a winner between them. They both have amazing skills that make them difficult opponents to beat. In 2021, Ronaldo's top speed was higher than Messi's by 1 kmph.
+                </p>
+            </details>            
+
+            <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+            
+            <details class="question1">
+                <summary class="questions">
+                Who is No 1 Messi or Ronaldo?
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+                    
+                <p class="paragraph">
+                    At the club level, Messi holds the record for most goals in La Liga with 474. In total, including clubs and country, Messi has scored 793 goals in 1,003 appearances. He also has 350 assists to his name. On the other hand, Ronaldo has scored 819 goals in 1,145 appearances for both club and country.21 Dec 202
+                </p>
+            </details>
+
+            <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+
+            <details class="question1">
+                <summary class="questions">
+                    How many goals does Messi have in his career?
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <p class="paragraph">
+                    He has also the most international goals by a South American male (98). Messi has scored over 790 senior career goals for club and country, and has the most goals by a player for a single club (672).
+                </p>
+            </details>
+
+            <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+
+            <details class="question1">
+                <summary class="questions">
+                    What is Lionel Messi's net worth?
+                
+                <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <p class="paragraph">
+                    620 million US Dollar
+                    According to reports, net worth of Lionel Messi is more than 620 million US Dollar, which makes him the wealthiest footballer in the world.5 days ago
+                </p>
+            </details>
+
+            <div class="Line" style="position:relative; display: flex; height: 1px; background-color: #ecedef; width: 53%;"> <a style="font-size: 11px; align-items: center; color: #70757a; display: flex; margin-left: 570px; padding: 0; " href="">Feedback</a>
+            </div> 
+        </div>
+    </div>
+
+    <div class="mirror">
+        <div>
+            <p>
+                https://www.mirror.co.uk › Sport › Football <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Lionel Messi - Latest news, transfers, pictures, video, opinion</a>
+            </h3>
+        </div>
+
+        <div class="mirrorcontent" style="display: flex;">
+            <p>
+                6 hours ago — Widely regarded as the greatest player in history, the unassuming Argentina forward has become a Barcelona legend winning a succession of La Liga and ...
+            </p>
+
+            <img style="border-radius: 10px;" alt="lionel messi from www.mirror.co.uk" id="dimg_61" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdYlF4cLgtrrtDtmu0G2BOka3kf293H3AqiXuFhhiloI0_u-WPfhGx&amp;usqp=CAE&amp;s" data-atf="4" data-frt="0">
+        </div>
+    </div>
+
+    <div class="fcbarca">
+        <div>
+            <p>
+                https://www.fcbarcelona.com › players › lionel-messi <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Leo Messi - Official Website of FC Barcelona</a>
+            </h3>
+        </div>
+
+        <div class="fcbarca-content" style="display: flex;">
+            <p>
+                Key Performance Stats Lionel Messi ; Goals · 669 ; Assists · 290 ; Shot Accuracy · 47% ; Chances Created · 406 ; Barça Appearances · 777.
+            </p>
+
+            <img style="border-radius: 10px;" alt="lionel messi from www.fcbarcelona.com" id="dimg_63" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQItqVFjpcSwefA5MvkSC8qsHTMu71ebn7HgZMYMxnPNdMQ3E1zzVtT&amp;usqp=CAE&amp;s" data-atf="4" data-frt="0">
+        </div>
+    </div>
+
+    <div class="transfer">
+        <div>
+            <p>
+                https://www.transfermarkt.com › profil › spieler <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Lionel Messi - Player profile 22/23 | Transfermarkt</a>
+            </h3>
+        </div>
+
+        <div class="transfer-content" style="display: flex;">
+            <p>
+                Lionel Messi, 35, from Argentina ➤ Paris Saint-Germain, since 2021 ➤ Right Winger ➤ Market value: €50.00m ➤ * Jun 24, 1987 in Rosario, Argentina.
+            </p>
+
+            <img style="border-radius: 10px;" alt="lionel messi from www.transfermarkt.com" id="dimg_49" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStZp8zPfUH1L83rImbHrc8cBTrWw8vhw1g5_tzII1ET26G8pzhEaAL&amp;usqp=CAE&amp;s" data-atf="4" data-frt="0">
+        </div>
+    </div>
+
+    <div>
+        <div class="video" style="display: flex;">
+            <h3>
+                <a href="">Video</a> 
+            </h3>
+            <svg class="videoicon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path></svg>
+        </div>
+    </div>
+
+    <div class="one" style="display: flex;">
+        <div>
+            <img class="dimg_47" src="https://i.ytimg.com/vi/PcbxB7EIIUE/mqdefault.jpg?sqp=-oaymwEECHwQRg&amp;rs=AMzJL3n9SJiblGTxLoJhkr08lEjb5kxCuA" class="YQ4gaf zr758c" height="70" width="124" alt="">
+        </div>
+
+        <div class="onecontent">
+            <p>
+                <a href="">
+                    Leo Messi's First Match As THE World CHAMPION</a>
+            </p>
+
+            <p>    
+                YouTube · Lev1sa
+            </p>
+
+            <p>
+                15 hours ago
+            </p>
+        </div>
+    </div>
+
+    <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+
+    <div class="two" style="display: flex;">
+        <div>
+            <img style="width: 130px;" src="/video1.png" alt="">
+        </div>
+
+        <div class="twocontent">
+            <p>
+                <a href="">Messi in the next World Cup? Lionel Scaloni thinks so! | ESPN ...</a> <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <p>
+                YouTube · ESPN FC
+            </p>
+
+            <p>
+                14 hours ago
+            </p>
+        </div>
+    </div>
+
+    <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+
+    <div class="three" style="display: flex;">
+        <div>
+            <img id="dimg_57" src="https://i.ytimg.com/vi/eXJGFpMwW5M/mqdefault.jpg?sqp=-oaymwEECHwQRg&amp;rs=AMzJL3m37tbRDQOWOVkhCDhY_j3lal6tDA" class="YQ4gaf zr758c" height="70" width="124" alt="" data-atf="4" data-frt="0">
+        </div>
+
+        <div class="threecontent">
+            <p>
+                <a href="">The Date For Lionel Messi And Cristiano Ronaldo's Next Face ...</a>
+            </p>
+
+            <p>
+                YouTube · Oh My Goal - News
+            </p>
+
+            <p>
+                1 day ago
+            </p>
+        </div>
+        <div class="viewallsection">
+            <hr class="pb5vrc" style="background-color: #dadce0; border: 0; height: 1px; left: 0; margin-top: 18px; position: absolute; width: 100%;" >
+            <button class="viewall">View all <svg style="width: 15px;"  focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg></button>
+        </div>    
+    </div>
+
+    <!-- Lower part -->
+    <div class="lowerpart">
+        <div>
+            <p class="fcbarca">
+                https://www.fcbarcelona.com › players › lionel-messi <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Leo Messi - Official Website of FC Barcelona</a>
+            </h3>
+        </div>
+
+        <div class="lowerpartcontent">
+            <p>
+                Key Performance Stats Lionel Messi ; Goals · 669 ; Assists · 290 ; Shot Accuracy · 47% ;
+                Chances Created · 406 ; Barça Appearances · 777.
+            </p>
+
+            <img style="border-radius: 10px;" alt="lionel messi from www.fcbarcelona.com" id="dimg_71" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQItqVFjpcSwefA5MvkSC8qsHTMu71ebn7HgZMYMxnPNdMQ3E1zzVtT&amp;usqp=CAE&amp;s" data-atf="4" data-frt="0">
+        </div>
+    </div>
+
+    <div class="lowerpart1">
+        <div>
+            <p class="lowerpartinstagram">
+                https://www.instagram.com › leomessi <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Leo Messi (@leomessi) • Instagram photos and videos</a>
+            </h3>
+
+            <p>
+                Bienvenidos a la cuenta oficial de Instagram de Leo Messi / Welcome to the official Leo Messi Instagram account · 987 posts · 418M followers · 290 following.
+            </p>
+        </div>
+    </div>
+    <div>
+        <div class="lowerpart2">
+            <p class="lowerpartfb">
+                https://fbref.com › FB Home Page › Players <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Lionel Messi Stats, Goals, Records, Assists, Cups and more</a>  
+            </h3>
+
+            <p>
+                Check out the latest domestic and international stats, match logs, goals, height, weight and more for Lionel Messi playing for FC Barcelona, Argentina men's ...
+            </p>
+        </div>
+    </div>
+
+    <div class="lowerpart3">
+        <div>
+            <p class="marca">
+                https://www.marca.com › Home › Soccer › Ligue 1 <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Latest Lionel Messi News Today & Season stats - MARCA</a>
+            </h3>
+        </div>
+
+        <div class="lowerpart2content" style="display: flex; justify-items: center;">
+            <div class="Image-one" style="border: 2px solid white;">
+                <g-img style="" class="Lzbnkd r2fjmd X3BRhe"><img id="dimg_49" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHbxuJ_is94397olzfZNSClcV6R-bRoZlwk_dmpJlzpx0HwCbGbvYINcZyPFQFILf6VrN9&amp;s" class="YQ4gaf zr758c wA1Bge" height="114" width="176" alt="" data-atf="4" data-frt="0"></g-img>  
+            </div>
+
+            <div>
+                <g-img class="Lzbnkd r2fjmd X3BRhe"><img id="dimg_51" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLBuofcFjHq1ATUldBU4e6uiA5Lf6iTfaO75987QJIQl0Yub4puSOUDe0mT-qptzdQ0GcmEM&amp;s" class="YQ4gaf zr758c wA1Bge" height="114" width="173" alt="" data-atf="4" data-frt="0"></g-img>
+            </div>
+
+            <div>
+                <g-img class="Lzbnkd r2fjmd X3BRhe"><img id="dimg_53" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-mXWWh7tc0hbKZmJq9OrHmr2KAg1aLLv7PvWe_slKUHd3gloNNBTP3FBLQmmmCHFiadOwHsQ&amp;s" class="YQ4gaf zr758c wA1Bge" height="114" width="147" alt="" data-atf="4" data-frt="0"></g-img>
+            </div>
+
+            <div>
+               <g-img class="Lzbnkd r2fjmd X3BRhe"><img id="dimg_55" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1YHmYTmBzvnx7MuVjpJ1aE77AfkRXPpy7QHmysuiUv1Q_ucEBAiYyAehuofHlPh52dtcQ524&amp;s" class="YQ4gaf zr758c wA1Bge" height="114" width="147" alt="" data-atf="4" data-frt="0"></g-img>
+            </div>
+        </div>
+
+        <div class="lowerpart2content">
+            <p>
+                14 hours ago — Get updates on the latest Lionel Messi News and enjoy our posts, videos and analysis on Marca English. All Leo Messi news in the same place.
+            </p>
+        </div>
+    </div>
+
+    <div class="euro1">
+        <div class="euroc">
+            <p class="eurocontent">
+                https://www.eurosport.com › football › person <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Lionel Messi - Player Profile - Football - Eurosport</a>
+            </h3>
+
+            <p>
+                Lionel Messi · Country: Argentina · Age: 35 years · Date of birth: 24 June 1987 · Place of birth: Rosario · Height: 1.70 m · Weight: 72 kg.
+            </p>
+        </div>
+
+        <!-- <div class="euro2">
+            <span>Born: Rosario</span>
+            <span>Sports: <a href="">Football</a></span>
+            <p class="euroa">
+                <a href="">Why is Lionel Messi famous?</a>
+            </p>
+
+            <p>
+                <a href="">What are Lionel Messi’s achievements?</a>
+            </p>
+        </div> -->
+    </div>
+
+    <div class="transfer">
+        <div>
+            <p>
+                https://www.transfermarkt.com › profil › spieler <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+            </p>
+
+            <h3>
+                <a href="">Lionel Messi - Player profile 22/23 | Transfermarkt</a>
+            </h3>
+
+            <p>
+                Lionel Messi, 35, from Argentina ➤ Paris Saint-Germain, since 2021 ➤ Right Winger ➤ Market value: €50.00m ➤ * Jun 24, 1987 in Rosario, Argentina.
+            </p>
+        </div>
+    </div>
+
+    <div class="related-search">
+        <h2>
+            Related searches  <svg style="width: 15px;" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>      
+        </h2>
+
+        <div class="wrap">            
+            <details class="question1">
+                <summary class="questions">
+                
+                <div style="display: flex; align-items: center; justify-items: center;">
+                    <img class="dimg_69" style="height: 35px; width: 35px; object-fit: cover; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbrxrg9AKqFmES4qOp5QRmFTDjN15D9YmaKyJZfcRyhRkCxTwc__wgnA&amp;s=0" class="YQ4gaf zr758c" alt="Image of Lionel Messi house" data-atf="4" data-frt="0">  
+                    <p style="margin-left: 10px;">Lionel Messi house</p>
+                </div>                
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+                
+                <div style="display: flex;">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" alt="Image of Lionel Messi house" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpS1PT6Xk6PUDzwxNq8hxHl5jt47Prsz1kvKnwqa7jRJhlflHE5NqdLA&amp;s=0">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: 2px white solid;" alt="Image of Lionel Messi house" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW9ksMl3q4lrGbaSeAu50xrTpUdKBW0WGoXYi4hAKdtO2dAUlIoHuVBg&amp;s=0">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: 2px white solid;" alt="Image of Lionel Messi house" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6QMBjzurXi1dwRV7jPMJHwojbo2ln0UO0OeuncYfeDxPa1ebffcI2&amp;s=0">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: 2px white solid;" alt="Image of Lionel Messi house" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcaaJ1jkCsLdrchfxX8YbL_9fNE7G-BnQ8gHC2j74XhWaGbblbHoMp&amp;s=0">
+                </div>
+            </details>            
+
+            <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+            
+            <details class="question1">
+                <summary class="questions">
+
+                <div style="display: flex; align-items: center; justify-items: center;">
+                    <img style="height: 35px; width: 35px; object-fit: cover; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRr5y-_8KuInT-gxJ7e9vbqYJ6KjhAFnQDX5ezdMi7eivXAiy89wtdaL2uUEOSwaY-UIvLIx964Uw&s=19" alt="">
+                    <p style="margin-left: 10px;">Argentina soccer players</p>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+                    
+                <div style="display: flex;">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRr5y-_8KuInT-gxJ7e9vbqYJ6KjhAFnQDX5ezdMi7eivXAiy89wtdaL2uUEOSwaY-UIvLIx964Uw&s=19" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNpfehPLLXY66kIHK7UcvenDNlNhAqWG-KmWGz_dCfhzpEEujCVwjqPlE&s=0" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlaNLOx_JdYW1_2D7ajSg_J4MTSzl0_jfZN2Lmu07t52QNl5ps9Pd7RHE&s=0" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu2xlJgnUgEYv9nh54EfvszbAHD8MZOdZCmQw2zPS1kZyy99Hwy9beMuQ&s=0" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQXLte0tNjsNQLnd0IqodOYhMVT4UIuwi_u1KRzHy2VDXu1ZJC7e0XPjASkWz_tfCGsR6gUehdy_w&s=19" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9di4neV2zCDuC1jsOFH7gVVbAwfgIVfUem2_N-nU&s=0" alt="">
+                </div>
+                
+            </details>
+
+            <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+
+            <details class="question1">
+                <summary class="questions">
+                
+                <div style="display: flex; align-items: center; justify-items: center ">
+                    <img style="height: 35px; width: 35px; object-fit: cover; border-radius: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVscy8qgdu6WacuEh9ornox1srQG9oUmDEmOucz9A&s=0" alt="">
+                    <p style="margin-left: 10px;">Barcelona strikers</p>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <div style="display: flex;">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVscy8qgdu6WacuEh9ornox1srQG9oUmDEmOucz9A&s=0" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ96VgRnudLa6aI9GhmKtojV3s3rz6GGeDmrGyW0zhJrbT9ffQ7t20Khu4&s=0" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStfGxQOzYEpFD7hHqJfVmrQgew601GXf4CSWq-2Y0xy4QT3vthAC5PZyk&s=0" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR9sVsrWKmpW7525fUDTNvX3qJctOETCIxIkKQSqXy19NwFjUyN0Ic5xbIVyO6Lrg1PWiS_1V6psA&s=19" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQqdqkmaM1BXSGT6oodplzM0vG5NrYp3hWuv7_ZOykHir1L1YcoI3N0MgNeCC0LoMsNUmRG1h3Tow&s=19" alt="">
+                    <img style="height: 144px; width: 150px; object-fit: cover; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgjpYt-fiF2ZLpYjsERZToYFIlu_BVOMHX58zPKy1RjcGc1HFaJvNWLS4&s=0" alt="">
+                </div>
+            </details>
+            
+            <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+
+            <details class="question1">
+                <summary class="questions">
+                
+                <div style="display: flex; align-items: center; justify-items: center ">
+                    <img style="height: 35px; width: 35px; object-fit: cover; border-radius: 5px;" src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQad6j-usMDSAjuJ6hX1dux51_EtAA45WOvxbajKfDmgIV8R55SYhlRQyY&s=0 alt="">
+                    <p style="margin-left: 10px;">World Cup Players</p>
+                </div>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+                </summary>
+
+                <div style="display: flex;">
+                    <img style="height: 100px; width: 100px; object-fit: cover; border-radius: 5px; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQad6j-usMDSAjuJ6hX1dux51_EtAA45WOvxbajKfDmgIV8R55SYhlRQyY&s=0alt=">
+                    <img style="height: 100px; width: 100px; object-fit: cover; border-radius: 5px; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrb-Sgrv9M8Nbia-H987MjfZQfUUnrtH70SpdMDDpvfQ94xyyhMt8JgQY&s=0" alt="">
+                    <img style="height: 100px; width: 100px; object-fit: cover; border-radius: 5px; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGAzBQ4rSoeernbs1rS3RtBHAks3uT3l1tIXKKPQrdt5y8KDFr-Whsgng&s=0" alt="">
+                    <img style="height: 100px; width: 100px; object-fit: cover; border-radius: 5px; border: white 2px solid;" src=" https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW6iHmUMBZEZPLHlDbfgx-nADe90omJShFtJSBi7aBJCRwjXklNOps79Y&s=0" alt="">
+                    <img style="height: 100px; width: 100px; object-fit: cover; border-radius: 5px; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL-wN-r3sGTymY-1kTyZpK7l6zmfWogYkjKEkOcUPtwqTPTk-v4aQ5oFc&s=0" alt="">
+                    <img style="height: 100px; width: 100px; object-fit: cover; border-radius: 5px; border: white 2px solid;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1trt0eexKctnSQAjHbBTjhM8MdXz4kBcNk91BXuC6-61ddcraVT1lMSI&s=0" alt="">
+                </div>
+            </details>
+
+
+            <div class="Line" style="position:relative; height: 1px; background-color: #ecedef; width: 60%;"  ></div>
+
+            <div class="Line" style="position:relative; display: flex; height: 1px; background-color: #ecedef; width: 53%;"> <a style="font-size: 11px; align-items: center; color: #70757a; display: flex; margin-left: 570px; padding: 0; " href="">Feedback</a>
+            </div> 
+        </div>
+    </div>
+
+    <div class="button-section" style="" >
+        <div style="display: flex; align-items: center; justify-items: center;">
+            <div style="margin-top: 60px;">
+                <button style="align-items: center; background-color: #f1f3f4; border-radius: 100px; box-sizing: border-box; display: flex; border: none; width: 300px; max-height: none;
+                min-height: 48px; padding-left: 17px; padding-right: 17px; position: relative;"><img style="width: 24px; height: 24px;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E" alt=""><a href="">lionel messi <b>net worth</b></a></button>
+            </div>
+    
+            <div style="margin-top: 60px; margin-left: 20px;">
+                <button style="align-items: center; background-color: #f1f3f4; border-radius: 100px; box-sizing: border-box; display: flex; border: none; width: 300px; max-height: none;
+                min-height: 48px; padding-left: 17px; padding-right: 17px; position: relative;" ><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E" alt=""><a href="">lionel messi <b>grandparents</b></a></button>
+            </div>
+        </div>
+    
+
+        <div style="display: flex; align-items: center; justify-items: center;">
+            <div style="margin-top: 15px;">
+                <button style="align-items: center; background-color: #f1f3f4; border-radius: 100px; box-sizing: border-box; display: flex; border: none; width: 300px; max-height: none; min-height: 48px; padding-left: 17px; padding-right: 17px; position: relative;"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E" alt=""><a href="">lionel messi <b>family</b></a></button>
+            </div>
+    
+            <div style="margin-top: 15px; margin-left: 20px;">
+                <button style="align-items: center; background-color: #f1f3f4; border-radius: 100px; box-sizing: border-box; display: flex; border: none; width: 300px; max-height: none; min-height: 48px; padding-left: 17px; padding-right: 17px; position: relative;" ><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E" alt=""><a href="">messi<b> children</b></a></button>
+            </div>
+        </div>
+
+        <div style="display: flex; margin-top: 15px;">
+            <div style="">
+                <button style="align-items: center; background-color: #f1f3f4; border-radius: 100px; box-sizing: border-box; display: flex; border: none; width: 300px; max-height: none; min-height: 48px; padding-left: 17px; padding-right: 17px; position: relative;" ><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E" alt=""><a href="">lionel messi <b> wife</b></a></button>
+            </div>
+    
+            <div style="margin-left: 20px;">
+                <button style="align-items: center; background-color: #f1f3f4; border-radius: 100px; box-sizing: border-box; display: flex; border: none; width: 300px; max-height: none;
+                min-height: 48px; padding-left: 17px; padding-right: 17px; position: relative;"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E" alt=""><a href=""> <b>why did</b> messi <b>leave barcelona</b></a></button>
+            </div>    
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <button style="align-items: center; background-color: #f1f3f4; border-radius: 100px; box-sizing: border-box; display: flex; border: none; width: 300px; max-height: none;
+            min-height: 48px; padding-left: 17px; padding-right: 17px; position: relative;"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='rgba(0,0,0,.54)' d='M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z'/%3E%3C/svg%3E" alt=""><a href="">lionel messi <b>age</b></a></button>
+        </div>
+    </div>
+</section>
+</body>
+</html>
